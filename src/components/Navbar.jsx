@@ -5,11 +5,11 @@ const Navbar = () => {
     <nav className="bg-slate-800 text-white">
       <div className="mycontainer flex justify-between items-center px-4 h-15 py-5">
         <div className="logo font-blod text-2xl">
-          <span className="text-green-800">&lt;</span>
+          <span className="text-green-500">&lt;</span>
           Pass
-          <span className="text-green-800">OP /&gt;</span>
+          <span className="text-green-500">OP /&gt;</span>
         </div>
-        <ul>
+        {/* <ul>
           <li className="flex gap-4">
             <a className="hover:font-bold" href="/">
               Home
@@ -21,7 +21,11 @@ const Navbar = () => {
               Contact
             </a>
           </li>
-        </ul>
+        </ul> */}
+        <button className="text-white bg-green-700 my-5 rounded-full flex  justify-between items-center">
+          <img className="invert p-1 w-10" src="icons/github.svg" alt="github logo"/>
+          <span className="font-bold px-2">GitHub</span>
+        </button>
       </div>
     </nav>
   );
