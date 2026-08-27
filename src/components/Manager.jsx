@@ -124,7 +124,7 @@ const Manager = () => {
             <tbody className="bg-green-100">
               {passwordArray.map((item ,index)=>{
                 return  <tr keye ={index}>
-                <td className="py-2 border border-white text-center w-32"><a href={item.site} target="_blank">{item.site} </a>
+                <td className=" flex items-center justify-center py-2 border border-white text-center w-32"><a href={item.site} target="_blank">{item.site} </a>
                 <animated-icons
   src="https://animatedicons.co/get-icon?name=copy&style=minimalistic&token=047dcf87-b84c-41c5-b2c6-5d33d94222ee"
   trigger="hover"
