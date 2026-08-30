@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from 'uuid';
 const Manager = () => {
   const ref = useRef();
   const passwordRef = useRef();
-  const [form, setform] = useState({ site: "", username: "", password: "" });
+  const [form, setForm] = useState({ site: "", username: "", password: "" });
   const [passwordArray, setPasswordArray] = useState([]);
 
   useEffect(() => {
@@ -48,7 +48,7 @@ const Manager = () => {
         localStorage.setItem("passwords", JSON.stringify(updatedPasswords));
         return updatedPasswords;
       });
-      setform({site: "", username: "", password: ""})
+      setForm({ site: "", username: "", password: "" });
       toast("Password saved", {
         position: "top-right",
         autoClose: 5000,
@@ -59,12 +59,10 @@ const Manager = () => {
         progress: undefined,
         theme: "dark",
       });
+    } else {
+      toast("Error: Password not saved");
     }
-      else{ 
-          toast(' Error: Password not saved')
-
-    }
-  }
+  };
 
   const deletePassword = (id) => { 
     console.log("Deleting password with id",id)
@@ -89,12 +87,12 @@ const Manager = () => {
   const editPassword = (id) => { 
     
     console.log("Editing password with id",id)
-    setform(passwordArray.filter(i=>i.id===id)[0])
+    setForm(passwordArray.filter(i=>i.id===id)[0])
     setPasswordArray(passwordArray.filter(item=>item.id!==id))
   };
 
   const handleChange = (e) => {
-    setform({ ...form, [e.target.name]: e.target.value });
+    setForm({ ...form, [e.target.name]: e.target.value });
   };
   return (
     <>
